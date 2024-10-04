@@ -1,0 +1,36 @@
+# realizarás operaciones de lectura y escritura en archivos de texto en Python.
+
+file=open('my_notes.txt', 'r')
+print(file.read())
+
+lineas = file.readlines()
+print(lineas)
+file.close()
+
+
+
+with open ('my_notes.txt', 'r') as archivo:
+    lineas = archivo.readlines()
+for l in lineas:
+
+    print(l.replace('/n', ''))
+
+
+with open ('my_notes.txt', 'r') as archivo:
+    contenido = archivo.read()
+    lineas = contenido.split('\n')
+    print(lineas)
+
+with open ('my_notes.txt', 'r') as archivo:
+    contenido = archivo.read()
+    lineas = contenido.split('\n')
+    pos = archivo.tell()
+    print(pos)
+    print('El archivo tiene {0} caracteres de longitud'. format(pos))
+
+
+
+with open('my_notes.txt', 'r') as file:
+    for line in file:
+        print(line.strip())
+
